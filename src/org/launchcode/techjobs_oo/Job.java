@@ -22,12 +22,39 @@ public class Job {
         nextId++;
     }
     public Job(String name, Employer employer, Location location, PositionType positionType, CoreCompetency coreCompetency) {
+        this();
         this.name = name;
         this.employer = employer;
         this.location = location;
         this.positionType = positionType;
         this.coreCompetency = coreCompetency;
     }
+
+//    @Override
+//    public String toString() {
+//        return "\n\n";
+//    }
+
+    @Override
+    public String toString() {
+        return  "\n" +
+                "ID: " + id +"\n" +
+                "Name: " + name + "\n" +
+                "Employer: " + employer + "\n" +
+                "Location: " + location + "\n" +
+                "Position Type: " + positionType + "\n" +
+                "Core Competency: " + coreCompetency + "\n";
+    }
+
+//        "\n" +
+//        "ID: 0\n" +
+//        "Name: Product Tester\n" +
+//        "Employer: ACME\n" +
+//        "Location: Desert\n" +
+//        "Position Type: Quality Control\n" +
+//        "Core Competency: Persistence\n";
+
+
 
 
     // TODO: Add custom equals and hashCode methods. Consider two Job objects "equal" when their id fields
