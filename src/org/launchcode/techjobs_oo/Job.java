@@ -38,21 +38,22 @@ public class Job {
 //        return "\n\n";
 //    }
 
-        private String strName;
-        private String strEmployer;
-        private String strLocation;
-        private String strPosition;
-        private String strCore;
-        private String na = "Data not available";
+    private String na = "Data not available";
+        private String strName = na;
+        private String strEmployer = na;
+        private String strLocation = na;
+        private String strPosition = na;
+        private String strCore = na;
+
         private String oop = "OOPS! This job does not seem to exist.";
 
         @Override
         public String toString() {
-            if(name == ""){strName = na;}else{strName = name;};
-            if(employer.getValue() != ""){strEmployer = employer.getValue();}else{strEmployer = na;};
-            if(location.getValue() == ""){strLocation = na;}else{strLocation = location.getValue();};
-            if(positionType.getValue() == ""){strPosition = na;}else{strPosition = positionType.getValue();};
-            if(coreCompetency.getValue() == ""){strCore = na;}else{strCore = coreCompetency.getValue();};
+            if(name != ""){strName = name;};
+            if(employer.getValue() != null){strEmployer = employer.getValue();};
+            if(location.getValue() != ""){strLocation = location.getValue();};
+            if(positionType.getValue() != ""){strPosition = positionType.getValue();};
+            if(coreCompetency.getValue() != ""){strCore = coreCompetency.getValue();};
                             // bonus
             if(name == "" && employer.getValue() == "" && location.getValue() == "" && positionType.getValue() == "" && coreCompetency.getValue() == "") {
                 return oop;
