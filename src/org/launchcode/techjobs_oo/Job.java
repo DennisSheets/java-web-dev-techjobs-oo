@@ -53,7 +53,7 @@ public class Job {
             if(location.getValue() == ""){strLocation = na;}else{strLocation = location.getValue();};
             if(positionType.getValue() == ""){strPosition = na;}else{strPosition = positionType.getValue();};
             if(coreCompetency.getValue() == ""){strCore = na;}else{strCore = coreCompetency.getValue();};
-
+                            // bonus
             if(name == "" && employer.getValue() == "" && location.getValue() == "" && positionType.getValue() == "" && coreCompetency.getValue() == "") {
                 return oop;
 
