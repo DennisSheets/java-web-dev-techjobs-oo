@@ -12,6 +12,9 @@ public class Job {
     private Location location;
     private PositionType positionType;
     private CoreCompetency coreCompetency;
+    private String first = "\n";
+    private String last = "\n";
+    private String na = "Data not available";
 
     // TODO: Add two constructors - one to initialize a unique ID and a second to initialize the
     //  other five fields. The second constructor should also call the first in order to initialize
@@ -35,16 +38,22 @@ public class Job {
 //        return "\n\n";
 //    }
 
-    @Override
-    public String toString() {
-        return  "\n" +
+//    @Override
+//    public String toString() {
+//        if(name == ""){name = na;}else {name = name;};
+//        if(employer == null){employer = na;};
+
+        @Override
+        public String toString() {
+        return  first +
                 "ID: " + id +"\n" +
                 "Name: " + name + "\n" +
                 "Employer: " + employer + "\n" +
                 "Location: " + location + "\n" +
                 "Position Type: " + positionType + "\n" +
-                "Core Competency: " + coreCompetency + "\n";
+                "Core Competency: " + coreCompetency + last;
     }
+
 
 //        "\n" +
 //        "ID: 0\n" +

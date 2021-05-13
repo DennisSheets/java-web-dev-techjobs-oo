@@ -48,10 +48,10 @@ public class JobTest {
         assertFalse(jobA.equals(jobB));
     }
 
-//    @Test
-//    public void TestLeadingTrailingBlankLinesReturnedFromToString() {
-//        assertTrue(jobA.toString().equals("\n\n"));
-//    }
+    @Test
+    public void TestLeadingTrailingBlankLinesReturnedFromToString() {
+        assertTrue(jobA.toString().equals("\n\n"));
+    }
 
     @Test
     public void TestToStringToCreateToString() {
