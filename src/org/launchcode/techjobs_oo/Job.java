@@ -14,7 +14,7 @@ public class Job {
     private CoreCompetency coreCompetency;
     private String first = "\n";
     private String last = "\n";
-    private String na = "Data not available";
+
 
     // TODO: Add two constructors - one to initialize a unique ID and a second to initialize the
     //  other five fields. The second constructor should also call the first in order to initialize
@@ -38,21 +38,33 @@ public class Job {
 //        return "\n\n";
 //    }
 
-//    @Override
-//    public String toString() {
-//        if(name == ""){name = na;}else {name = name;};
-//        if(employer == null){employer = na;};
+        private String strName;
+        private String strEmployer;
+        private String strLocation;
+        private String strPosition;
+        private String strCore;
+        private String na = "Data not available";
+        private String oop = "OOPS! This job does not seem to exist.";
 
         @Override
         public String toString() {
-        return  first +
-                "ID: " + id +"\n" +
-                "Name: " + name + "\n" +
-                "Employer: " + employer + "\n" +
-                "Location: " + location + "\n" +
-                "Position Type: " + positionType + "\n" +
-                "Core Competency: " + coreCompetency + last;
-    }
+            if(name == ""){strName = na;}else{strName = name;};
+            if(employer.getValue() != ""){strEmployer = employer.getValue();}else{strEmployer = na;};
+            if(location.getValue() == ""){strLocation = na;}else{strLocation = location.getValue();};
+            if(positionType.getValue() == ""){strPosition = na;}else{strPosition = positionType.getValue();};
+            if(coreCompetency.getValue() == ""){strCore = na;}else{strCore = coreCompetency.getValue();};
+
+            if(name == "" && employer.getValue() == "" && location.getValue() == "" && positionType.getValue() == "" && coreCompetency.getValue() == "") {
+                return oop;
+
+            } return  first +
+                    "ID: " + id +"\n" +
+                    "Name: " + strName + "\n" +
+                    "Employer: " + strEmployer + "\n" +
+                    "Location: " + strLocation + "\n" +
+                    "Position Type: " + strPosition + "\n" +
+                    "Core Competency: " + strCore + last;
+        }
 
 
 //        "\n" +

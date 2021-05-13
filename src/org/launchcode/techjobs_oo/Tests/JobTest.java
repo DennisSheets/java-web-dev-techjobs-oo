@@ -49,8 +49,10 @@ public class JobTest {
     }
 
     @Test
-    public void TestLeadingTrailingBlankLinesReturnedFromToString() {
-        assertTrue(jobA.toString().equals("\n\n"));
+    public void TestToStringLeadTrailingBlankLines() {
+        char[] chars = jobD.toString().toCharArray();
+        assertTrue("Leading Char is an empty line  \n",chars[0] == '\n');
+        assertTrue("Trailing Char is an empty line \n",chars[chars.length -1] == '\n');
     }
 
     @Test
@@ -65,5 +67,8 @@ public class JobTest {
         assertTrue(jobD.toString().equals(string));
     }
 
-
+    @Test
+    public void TestToStringBlank() {
+        assertTrue(jobA.toString() == "OOPS! This job does not seem to exist.");
+    }
 }
