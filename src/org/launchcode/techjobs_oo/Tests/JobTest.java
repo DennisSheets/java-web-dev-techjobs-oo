@@ -14,6 +14,7 @@ public class JobTest {
     Job jobC;
     Job jobD;
     Job jobE;
+    Job jobF;
 
     @Before
     public void setup() {
@@ -23,6 +24,7 @@ public class JobTest {
         jobC = new Job();
         jobD = new Job("Product tester", new Employer("ACME"), new Location("Desert"), new PositionType("Quality Control"), new CoreCompetency("Persistence"));
         jobE = new Job();
+        jobF = new Job("", new Employer(""), new Location(""), new PositionType(""), new CoreCompetency(""));
     }
 
     @Test
@@ -31,7 +33,7 @@ public class JobTest {
     }
 
     @Test
-    public void TestJobZConstructorSetsAllFields(){
+    public void TestJobConstructorSetsAllFields(){
         assertEquals("Product tester",jobD.getName());
         assertTrue(jobD.getEmployer() instanceof Employer);
         assertTrue(jobD.getLocation() instanceof Location);
@@ -67,13 +69,13 @@ public class JobTest {
         assertTrue(jobD.toString().equals(string));
     }
 
-//    @Test  // bonus
-//    public void TestToStringBlankA() {  //FAILS  "java.lang.NullPointerException: Cannot invoke "org.launchcode.techjobs_oo.Employer.getValue()" because "this.employer" is null"
-//        assertTrue(jobB.toString().equals("OOPS! This job does not seem to exist."));
-//    }
+    @Test  // bonus
+    public void TestToStringBlankA() {
+        assertTrue(jobF.toString().equals("OOPS! This job does not seem to exist."));
+    }
 
-//    @Test  // bonus
-//    public void TestToStringBlankB() {
-//        assertTrue(jobB.toString().contains("OOPS! This job does not seem to exist."));
-//    }
+    @Test  // bonus
+    public void TestToStringBlankB() {
+        assertTrue(jobF.toString().contains("OOPS! This job does not seem to exist."));
+    }
 }
